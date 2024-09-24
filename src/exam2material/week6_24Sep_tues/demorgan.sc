@@ -47,6 +47,22 @@ import org.sireum.justification.natded.prop._
     ( !(p & q) ) |- ( !p | !q )
       Proof(
         1 ( !(p & q) ) by Premise,
+        2 SubProof(
+            3 Assume (!(!p |!q)),
+            // try to contradict with premise (p&q)
+            // we need p&q
+            // try to prove p using pbv
+              Subproof (
+                5 Assume (!p),
+                6 (!p|!q) by OrI1(5),
+7 (F) by NegE(6,3)
+),
+8 (p) by PbC(4),
+
+/// try to prove q (would look similar)
+// thne put p&q together to make F... proof by contradiction
+
+
 
     )
     //@formatter:on
