@@ -38,21 +38,36 @@ How do we approach proofs?
 2. Extract all information from premises (AndE, ImplyE)
 3. Look at what you are trying to prove (find top level operator)
 
-    ∧ -
+    ∧ - usually try to prove two sides
 
-    ∨ -
+    ∨ - can prove one side of goal OR by itself? Then use OrI
+        do you have an OR statement as a claim? 
+        then try OrE on that statement to get goal conclusion in both cases
+        see anything with negation? try pbc
+        assum !(conclusion), try to get contradiction
 
-    → -
+    → - ImplyI
+        subproof - assume LHS
+            try to get RHS
 
-    ¬(something) -
+    ¬(something) -NegI pattern
+      suboroof- assume something
+       try to get contradiction
 
     just a propositional atom?
         look for where that atom IS in your premises
+        think about what you'd need to extract for premises
+
 
 
 
 
 After each claim - see what we can extract that is new.
+    always write down your goal for the end of the subproof
+    ONLY 4 subproof rules :
+1, ImplyI, OrE, PbC, NegI
+have one in mind when you open a subproof
+only ONE rule (OrE) involves 2 subproods in a row
 
 
 Inside a subproof - think about top-level op for your goal
@@ -62,6 +77,7 @@ Inside a subproof - think about top-level op for your goal
 
 Doesn't fit a pattern or doesn't work out from above:
 - Negation involved?
+Try pbc
 
 
 - As a last resort, copy/paste LEM proof to have
@@ -71,7 +87,21 @@ Doesn't fit a pattern or doesn't work out from above:
 
 
 --> when do we open a subproof?
+    Subproof
+        assume whatever we want
+        end  with something (not F)
 
+        end with something
+    could only conclude assume -> conclusion
+
+if you have:
+subproof 
+    assume something
+    end in F
+Can conclude opposition of something using either NegI or PbC
+
+NegI: ! is added at the end
+PbC: we assume the not
 
 
 
